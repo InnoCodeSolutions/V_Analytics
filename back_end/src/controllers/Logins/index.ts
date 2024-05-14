@@ -13,7 +13,7 @@ const login = async (req: Request, res: Response) => {
       return res.status(401).json({ error: 'Credenciais inválidas', alert: 'Credenciais inválidas' });
     }
     
-    const token = jwt.sign({ usuario: user.rows[0].id }, 'senha2');
+    const token = jwt.sign({ usuario: user.rows[0].id }, 'senha1');
     
     res.json({ token });
   } catch (error) {

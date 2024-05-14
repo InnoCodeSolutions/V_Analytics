@@ -3,6 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import cadastroRoutes from './routes/Cadastro/cadastroRoutes';
 import loginRoutes from './routes/Login/loginRoutes';
+import statusRoutes from './routes/Relatorio/Atibaia/statusRoutes';
 
 
 
@@ -19,6 +20,7 @@ app.use(bodyParser.json());
 
 app.use(loginRoutes);
 app.use(cadastroRoutes);
+app.use(statusRoutes)
 
 app.listen(PORT, () => {
   console.log(`Rodando na porta ${PORT}`);

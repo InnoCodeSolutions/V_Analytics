@@ -1,12 +1,33 @@
 import { Link } from "react-router-dom";
 import "./index.css";
+import axios from 'axios';
 import logo from "../../../assets/logo.jpg";
 import home from "../../../assets/botao_home.jpg";
 import dashboard from "../../../assets/botao_dashboard.jpg";
 import equipe from "../../../assets/botao_equipe.jpg";
 import projeto from "../../../assets/botao_projeto.jpg";
+import { useEffect, useState } from "react";
+import { Dados } from "../../../types";
+
 
 export default function Atibaia() {
+    const [analistas, setAnalistas] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.post('http://localhost:3001/StatusAtibaia');
+                setAnalistas(response.data);
+            } catch (error) {
+                console.error("Erro ao buscar dados dos analistas:", error);
+            }
+        };
+
+        fetchData();
+    }, [])
+    if (analistas === null) {
+        return <div>Loading...</div>; // Exibir um indicador de carregamento enquanto os dados estão sendo buscados
+    };
     return (
         <div className="menu">
             <div className="navbar">
@@ -43,25 +64,22 @@ export default function Atibaia() {
                                     <th>Não Finalizado</th>
                                     <th>Validado</th>
                                     <th>Não Validado</th>
+
                                 </tr>
                             </thead>
                             <tbody>
                                 {/* Aqui você pode mapear os dados e gerar as linhas da tabela dinamicamente */}
                                 {/* Exemplo de linha estática */}
-                                <tr>
-                                    <td>Analista 1</td>
-                                    <td>81</td>
-                                    <td>126</td>
-                                    <td>0</td>
-                                    <td>207</td>
-                                </tr>
-                                <tr>
-                                    <td>Analista 2</td>
-                                    <td>782</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>782</td>
-                                </tr>
+                                {analistas.map((analista:Dados,index) => (
+                                    <tr key={index}>
+                                        <td>{analista.atribuicao}</td>
+                                        <td>{analista.finalizados}</td>
+                                        <td>{analista.nao_finalizados}</td>
+                                        <td>{analista.validados}</td>
+                                        <td>{analista.nao_validados}</td>
+                                        
+                                    </tr>
+                                ))}
                                 {/* Adicione mais linhas conforme necessário */}
                             </tbody>
                         </table>
