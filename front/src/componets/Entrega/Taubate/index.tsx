@@ -5,8 +5,28 @@ import home from "../../../assets/botao_home.jpg";
 import dashboard from "../../../assets/botao_dashboard.jpg";
 import equipe from "../../../assets/botao_equipe.jpg";
 import projeto from "../../../assets/botao_projeto.jpg";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Dados } from "../../../types";
 
 export default function Taubate() {
+    const [analistas, setAnalistas] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.post('http://localhost:3001/StatusTaubate');
+                setAnalistas(response.data);
+            } catch (error) {
+                console.error("Erro ao buscar dados dos analistas:", error);
+            }
+        };
+
+        fetchData();
+    }, [])
+    if (analistas === null) {
+        return <div>Loading...</div>; // Exibir um indicador de carregamento enquanto os dados estão sendo buscados
+    };
     return (
         <div className="menu">
             <div className="navbar">
@@ -48,20 +68,16 @@ export default function Taubate() {
                             <tbody>
                                 {/* Aqui você pode mapear os dados e gerar as linhas da tabela dinamicamente */}
                                 {/* Exemplo de linha estática */}
-                                <tr>
-                                    <td>Analista 1</td>
-                                    <td>218</td>
-                                    <td>13</td>
-                                    <td>0</td>
-                                    <td>231</td>
-                                </tr>
-                                <tr>
-                                    <td>Analista 2</td> {/*baser futura para o banco de dados com valores das query*/}
-                                    <td>1162</td>
-                                    <td>381</td>
-                                    <td>0</td>
-                                    <td>1543</td>
-                                </tr>
+                                {analistas.map((analista:Dados,index) => (
+                                    <tr key={index}>
+                                        <td>{analista.atribuicao}</td>
+                                        <td>{analista.finalizados}</td>
+                                        <td>{analista.nao_finalizados}</td>
+                                        <td>{analista.validados}</td>
+                                        <td>{analista.nao_validados}</td>
+                                        
+                                    </tr>
+                                ))}
                                 {/* Adicione mais linhas conforme necessário */}
                             </tbody>
                         </table>
