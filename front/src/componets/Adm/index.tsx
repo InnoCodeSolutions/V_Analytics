@@ -24,9 +24,9 @@ export default function Adm(){
                 <div className="border-bottom"></div>
                 <div className="navegar">
                     <Link to="/Acesso"><div><img className="fav-botao" src={home} alt="" /> <span>Home</span></div></Link>
-                    <Link to="/"><div><img className="fav-botao" src={dashboard} alt="" /> <span>Dashboard</span></div></Link>
-                    <Link to="/"><div><img className="fav-botao" src={equipe} alt="" /> <span>Equipe</span></div></Link>
-                    <Link to="/"><div><img className="fav-botao" src={projeto} alt="" /> <span>Projeto</span></div></Link>
+                    <Link to="/Dashboard"><div><img className="fav-botao" src={dashboard} alt="" /> <span>Dashboard</span></div></Link>
+                    <Link to="/Equipe"><div><img className="fav-botao" src={equipe} alt="" /> <span>Equipe</span></div></Link>
+                    <Link to="/Projetos"><div><img className="fav-botao" src={projeto} alt="" /> <span>Projeto</span></div></Link>
                 </div>
     </div>            
     <div className="meio">

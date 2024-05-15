@@ -27,6 +27,7 @@
     margin-bottom: 0;
     height: 8vh;
     border-radius: 1vw;
+    
 }
 
 .relatorio {
@@ -35,10 +36,11 @@
     width: 67.5vw;
     margin: 0.5vh;
     margin-bottom: 0;
-    height: 87vh;
+    height: 80vh;
     border-radius: 1vw;
     font-weight: bold;
     text-align: center;
+    justify-content: center;
 }
 
 .corpo1 {
@@ -58,12 +60,22 @@
     height: 16.4vh;
     border-radius: 1vw;
 }
+.botao_span{
+    position: fixed;
 
+}
+.end_button{
+    display: flex;
+    align-content: center;
+    justify-content: end;
+    margin-left: 10px;
+    
+}
 *{
     text-decoration: none;
 }
 .menu {
-    width: 100%;
+    width: 100vw;
 }
 
 .navbar {
@@ -114,7 +126,8 @@
 
 .status_{
     display: flex;
-    flex-direction: column;
+    
+    justify-content: center;
 }
 .navegar{
     display: flex;

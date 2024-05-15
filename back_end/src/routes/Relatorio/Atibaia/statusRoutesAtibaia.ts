@@ -4,6 +4,6 @@ import statusAtibaia from '../../../controllers/Relatorio/Atibaia';
 
 const router = express.Router();
 
-router.post('/StatusAtibaia', statusAtibaia);
+router.get('/StatusAtibaia', statusAtibaia);
 
 export default router;

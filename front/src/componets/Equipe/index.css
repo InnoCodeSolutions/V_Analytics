@@ -1,0 +1,91 @@
+*{
+    text-decoration: none;
+  }
+  
+  .App {
+    background-color: #EC6A16;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Fixed height */
+    
+    
+  }
+  
+  .user-form {
+    text-align: left; /* Change to left alignment */
+    max-width: 25rem;
+    margin: 0 auto;
+    padding: 2rem 5.25rem;
+    border: 0.5rem solid #EC6A16;
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  
+  .input-group {
+    margin-bottom: 0.5rem; /* Adjust spacing between input groups */
+    display: block; /* Change to block display */
+  }
+  
+  .input-group label {
+    color: #EC6A16;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem; /* Add margin below label */
+    text-transform: uppercase;
+    display: block; /* Make label a block element */
+  }
+  
+  input {
+    width: 100%; /* Full width of the container */
+    height: 2.75rem;
+    padding: 0.025rem;
+    border-radius: 0.25rem;
+    border: 0.0625rem solid #ccc;
+    background-color: #f2f2f2;
+  }
+  
+  select {
+    width: 100%; /* Full width of the container */
+    height: 2.75rem;
+    padding: 0.025rem;
+    border-radius: 0.25rem;
+    border: 0.0625rem solid #ccc;
+    background-color: #f2f2f2;
+    appearance: none; /* Remove default dropdown arrow */
+    cursor: pointer;
+  }
+  
+    
+    select:focus {
+      outline: none; /* Remove default focus outline */
+    }
+    
+    select::-ms-expand {
+      display: none; /* Remove default IE10 arrow */
+    }
+    
+    select::-webkit-scrollbar {
+      width: 0 !important; /* Hide scrollbar on Chrome, Safari, Edge */
+    }
+    
+    button{
+      width: 9.375rem;
+      height: 2.5rem;
+      padding: 0.05rem;
+      margin-left: 4.5rem;
+      border: none;
+      border-radius: 0.25rem;
+      background-color: #EC6A16; /* Cor do botão #EC6A16 */
+      color: white;
+      cursor: pointer;
+      margin-top: 1.25rem;
+      font-size: 1.125rem;
+  
+      transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+      background-color: #218838;
+    }

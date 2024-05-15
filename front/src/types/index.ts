@@ -12,3 +12,6 @@ export interface Dados {
   nao_validados:number;
   nao_finalizados:number;
 }
+export interface Props {
+  analistas: Dados[];
+}

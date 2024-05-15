@@ -70,7 +70,7 @@ select {
     width: 0 !important; /* Hide scrollbar on Chrome, Safari, Edge */
   }
   
-  button{
+  .button{
     width: 9.375rem;
     height: 2.5rem;
     padding: 0.05rem;
