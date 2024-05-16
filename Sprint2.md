@@ -4,13 +4,13 @@
 
   
 
-<h1  align="center">Sprint 1: 25/03/2024 a 18/04/2024</h1>
+<h1  align="center">Sprint 1: 22/04/2024 a 15/05/2024</h1>
 
 <p  align="center">
 <a  href="#objetivos">Objetivos da sprint</a> &nbsp |&nbsp &nbsp
 <a  href="#entregas">Entregas</a> &nbsp |&nbsp &nbsp
-<a  href="#sprint_backlog">Sprint Backlog 1</a> &nbsp |&nbsp &nbsp
-<a  href="#wireframe">Wireframe</a> &nbsp |&nbsp &nbsp
+<a  href="#sprint_backlog">Sprint Backlog 2</a> &nbsp |&nbsp &nbsp
+<a  href="#export_pdf">Exportação em PDF</a> &nbsp |&nbsp &nbsp
 <a  href="#kanban">KanBan</a> &nbsp |&nbsp &nbsp 
 <a  href="#metricas">Métricas do time</a> &nbsp |&nbsp &nbsp 
 <a  href="#sprint_retrospectiva">Sprint Retrospectiva</a>
@@ -125,7 +125,7 @@ Apresentação para o cliente (Sprint Review)
 
 <span  id="sprint_backlog">
 
-## :clipboard: Sprint Backlog 1
+## :clipboard: Sprint Backlog 2
 <p>A Sprint Planning foi realizada no dia 23/04/2024, gerou os artefatos para o backlog abaixo:</p>
 <div align="center">
       <img src="./docs/sprint_backlog2.png">
@@ -136,7 +136,7 @@ Apresentação para o cliente (Sprint Review)
 
 <br>
 
-<span  id="wireframe">
+<span  id="export_pdf">
 
 ## :rice_scene: Exportação em .pdf
 
@@ -173,7 +173,7 @@ Nesta sprint o time se uniu para as entregas de cada item listado na backlog da 
 
 
 <div  align="center">
-<img  src="./docs/burndown_sprint2.jpeg"  />
+<img  src="./docs/burndown_sprint2.jpg"  />
 </div>
 
 

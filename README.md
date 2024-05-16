@@ -59,7 +59,7 @@ Cada entrega será realizada a partir da **data de conclusão**, além da criaç
 | Sprint | Previsão de entrega | Status | Histórico |
 |:--:|:----------:|:-------------------|:-------------------------------------------------:|
 | 01 | 18/04/2024 | ✅ Concluído |[Relatório](Sprint1.md)
-| 02 | 16/05/2024 | ❌ Não iniciada |
+| 02 | 16/05/2024 | ✅ Concluído |[Relatório](Sprint2.md)
 | 03 | 13/06/2024 | ❌ Não iniciada |
 
 </div>   
