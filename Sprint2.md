@@ -41,15 +41,15 @@ Os requisitos definidos pela equipe abrangidos por essa sprint são:
 
   
 
-- :heavy_check_mark: **1:** Criação e aplicação do Banco de Dados;
+- :heavy_check_mark: **1:** Criação e aplicação do Banco de Dados
 
-- :heavy_check_mark: **2:** Realizar o login com consulta ao BD;
+- :heavy_check_mark: **2:** Realizar o login com consulta ao BD
 
-- :heavy_check_mark: **3:** Cadastrar o usuário no BD;
+- :heavy_check_mark: **3:** Cadastrar o usuário no BD
 
-- :heavy_check_mark: **4:** Realizar consultas reais no BD;
+- :heavy_check_mark: **4:** Realizar consultas reais no BD
 
-- :heavy_check_mark: **5:** Exportar consultas em .pdf;
+- :heavy_check_mark: **5:** Exportar consultas em .pdf
 
 - :heavy_check_mark: **6:** Elaboração da Documentação e organização no GitHub
 
