@@ -1,19 +1,30 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import './index.css';
-import Credentials from '../../types';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Login: React.FC = () => {
-  const [credentials, setCredentials] = useState<Credentials>({ username: '', password: '' });
+  const navigate = useNavigate();
+  const [credentials, setCredentials] = useState({ username: '', password: '' });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setCredentials({ ...credentials, [name]: value });
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log(credentials);
-    // Aqui você pode enviar os dados do formulário para o backend ou fazer outras operações necessárias
+    try {
+      const response = await axios.post('http://localhost:3001/', credentials);
+      if (response.status === 200) {
+        localStorage.setItem('token', response.data.token);
+        navigate('/Acesso');
+      } else {
+        console.log('Credenciais inválidas');
+      }
+    } catch (error) {
+      console.error('Erro ao fazer login:', error);
+    }
   };
 
   return (
@@ -41,7 +52,7 @@ const Login: React.FC = () => {
               onChange={handleChange}
             />
           </div>
-          <Link to="/Acesso"><button id='button' type="submit">ENTRAR</button></Link>
+          <button id="button" type="submit">ENTRAR</button>
         </form>
       </div>
     </div>

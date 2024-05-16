@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import "./index.css"
 import logo from "../../assets/logo.jpg";
 import home from "../../assets/botao_home.jpg";
 import dashboard from "../../assets/botao_dashboard.jpg";
 import equipe from "../../assets/botao_equipe.jpg";
 import projeto from "../../assets/botao_projeto.jpg";
-export default function Adm() {
+
+export default function Prjetos() {
     return (
         <div className="menu">
             <div className="navbar">
@@ -31,33 +32,20 @@ export default function Adm() {
             </div>
             <div className="meio">
                 <div className="home"></div>
-                <Link className="opcao" to="/Cadastro"><button className="corpo"> CADASTRO DE FUNCIONÁRIO</button></Link>
-                <div className="corpo1">
-                    <Link to="/StatusTaubate"><button className="botao"> STATUS DE ENTREGAS TAUBATÉ</button></Link>
-                    <Link to="/StatusCruzeiro"><button className="botao"> STATUS DE ENTREGAS CRUZEIRO</button></Link>
-                    <Link to="/StatusAtibaia"><button className="botao"> STATUS DE ENTREGAS ATIBAIA</button></Link>
-                    {/* <button className="botao"></button>
-            <button className="botao"></button>
-            <button className="botao"></button> */}
+                <div className="relatorio"> Projetos
+
                 </div>
-                {/* <div className="corpo1">
-            <button className="botao"></button>
-            <button className="botao"></button>
-            <button className="botao"></button>
-            <button className="botao"></button>
-        </div>
-        <div className="corpo1">
-            <button className="botao"></button>
-            <button className="botao"></button>
-            <button className="botao"></button>
-            <button className="botao"></button>
-        </div> */}
-                <div className="first_button">
+
+                <div className="end_button">
+                    <Link to="/Acesso">
+                        <button>Voltar</button>
+                    </Link>
                     <Link to="/">
                         <button>Desconectar</button>
                     </Link>
                 </div>
             </div>
+
         </div>
     )
 }

@@ -26,11 +26,13 @@ code {
 
 .login-container {
   background-color: white;
-  padding: 1rem 2rem; /* Ajuste o segundo valor para alterar o padding à direita e à esquerda */
+  padding: 2rem 3rem; /* Ajuste o segundo valor para alterar o padding à direita e à esquerda */
   border-radius: 20px;
   text-align: center;
   width: 410px;
   height: 558px;
+  border-radius: 30px;
+  
 }
 
 .login-container h1 {
@@ -59,6 +61,7 @@ input {
   border-radius: 4px;
   border: 1px solid #ccc;
   background-color: #f2f2f2;
+
 }
 
 #button {
@@ -67,4 +70,18 @@ input {
 
 * {
   text-decoration: none;
+}
+.input-group label {
+  display: block; /* Adiciona uma quebra de linha antes do label para garantir o alinhamento correto */
+  margin-bottom: 0.5rem; /* Adiciona um pequeno espaço entre o label e o input */
+}
+
+
+input {
+  width: calc(100% - 20px); /* Ajusta a largura do input para preencher o contêiner corretamente */
+}
+
+input {
+  width: calc(100% - 40px); /* Ajusta a largura do input para preencher o contêiner corretamente */
+  font-size: 25px; /* Ajuste este valor para alterar o tamanho da fonte */
 }

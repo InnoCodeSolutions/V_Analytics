@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "../back/src/middlewares/index.tsx"  ]
 }

@@ -1,12 +1,53 @@
 import { Link } from "react-router-dom";
 import "./index.css";
+import axios from 'axios';
 import logo from "../../../assets/logo.jpg";
 import home from "../../../assets/botao_home.jpg";
 import dashboard from "../../../assets/botao_dashboard.jpg";
 import equipe from "../../../assets/botao_equipe.jpg";
 import projeto from "../../../assets/botao_projeto.jpg";
+import { useEffect, useState } from "react";
+import { Dados } from "../../../types";
+import html2pdf from 'html2pdf.js';
 
 export default function Atibaia() {
+    const [analistas, setAnalistas] = useState<Dados[]>([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get<Dados[]>('http://localhost:3001/StatusAtibaia');
+                setAnalistas(response.data);
+            } catch (error) {
+                console.error("Erro ao buscar dados dos analistas:", error);
+            }
+        };
+
+        fetchData();
+    }, [])
+
+    if (!analistas.length) {
+        return <div>Loading...</div>; // Exibir um indicador de carregamento enquanto os dados estão sendo buscados
+    };
+
+    const handlePrintContent = () => {
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+        const divMeio = document.querySelector('.relatorio');
+        if (divMeio) {
+            const opt = {
+                margin: 1,
+                filename: 'relatorioAtibaia.pdf',
+                image: { type: 'jpeg', quality: 100 },
+                html2canvas: { scale: 4 }, // Ajuste a escala para 1
+                jsPDF: { unit: 'px', format: [screenWidth, screenHeight], orientation: 'portrait' }
+            };
+
+            html2pdf().from(divMeio).set(opt).save();
+        }
+    };
+
     return (
         <div className="menu">
             <div className="navbar">
@@ -25,52 +66,54 @@ export default function Atibaia() {
                 <div className="border-bottom"></div>
                 <div className="navegar">
                     <Link to="/Acesso"><div><img className="fav-botao" src={home} alt="" /> <span>Home</span></div></Link>
-                    <Link to="/"><div><img className="fav-botao" src={dashboard} alt="" /> <span>Dashboard</span></div></Link>
-                    <Link to="/"><div><img className="fav-botao" src={equipe} alt="" /> <span>Equipe</span></div></Link>
-                    <Link to="/"><div><img className="fav-botao" src={projeto} alt="" /> <span>Projeto</span></div></Link>
+                    <Link to="/Dashboard"><div><img className="fav-botao" src={dashboard} alt="" /> <span>Dashboard</span></div></Link>
+                    <Link to="/Equipe"><div><img className="fav-botao" src={equipe} alt="" /> <span>Equipe</span></div></Link>
+                    <Link to="/Projetos"><div><img className="fav-botao" src={projeto} alt="" /> <span>Projeto</span></div></Link>
                 </div>
             </div>
             <div className="meio">
-                <div className="home"></div>
+                <div className="home">
+
+                </div>
                 <div className="relatorio"> Status Entregas: Atibaia
-                    <div>
-                        <h2>Relatório</h2>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Analista</th>
-                                    <th>Finalizado</th>
-                                    <th>Não Finalizado</th>
-                                    <th>Validado</th>
-                                    <th>Não Validado</th>
+
+                    <h2>Relatório</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Analista</th>
+                                <th>Finalizado</th>
+                                <th>Não Finalizado</th>
+                                <th>Validado</th>
+                                <th>Não Validado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {/* Mapeamento dos dados dos analistas para gerar as linhas da tabela */}
+                            {analistas.map((analista, index) => (
+                                <tr key={index}>
+                                    <td>{analista.atribuicao}</td>
+                                    <td>{analista.finalizados}</td>
+                                    <td>{analista.nao_finalizados}</td>
+                                    <td>{analista.validados}</td>
+                                    <td>{analista.nao_validados}</td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                {/* Aqui você pode mapear os dados e gerar as linhas da tabela dinamicamente */}
-                                {/* Exemplo de linha estática */}
-                                <tr>
-                                    <td>Analista 1</td>
-                                    <td>81</td>
-                                    <td>126</td>
-                                    <td>0</td>
-                                    <td>207</td>
-                                </tr>
-                                <tr>
-                                    <td>Analista 2</td>
-                                    <td>782</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>782</td>
-                                </tr>
-                                {/* Adicione mais linhas conforme necessário */}
-                            </tbody>
-                        </table>
-                    </div>
+                            ))}
+                        </tbody>
+                    </table>
+
+                </div>
+                <div className="end_button">
+                    <Link to="/Acesso"><button>Voltar</button></Link>
+                    {/* Botão para imprimir conteúdo */}
+                    <button onClick={handlePrintContent}>Imprimir Conteúdo</button>
+                    {/* Exibir conteúdo impresso */}
+                    <Link to="/">
+                        <button>Desconectar</button>
+                    </Link>
                 </div>
 
-
             </div>
-
         </div>
     );
 }

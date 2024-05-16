@@ -27,19 +27,20 @@
     margin-bottom: 0;
     height: 8vh;
     border-radius: 1vw;
+    
 }
 
-.corpo {
+.relatorio {
     background-color: #d9d9d9;
     color: #070707;
     width: 67.5vw;
     margin: 0.5vh;
     margin-bottom: 0;
-    height: 30vh;
+    height: 80vh;
     border-radius: 1vw;
-}
-.corpo:hover {
-    background-color:rgb(214, 91, 10);
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
 }
 
 .corpo1 {
@@ -59,14 +60,22 @@
     height: 16.4vh;
     border-radius: 1vw;
 }
-.botao:hover{
-    background-color:rgb(214, 91, 10);  
+.botao_span{
+    position: fixed;
+
+}
+.end_button{
+    display: flex;
+    align-content: center;
+    justify-content: end;
+    margin-left: 10px;
+    
 }
 *{
     text-decoration: none;
 }
 .menu {
-    width: 100%;
+    width: 100vw;
 }
 
 .navbar {
@@ -117,7 +126,8 @@
 
 .status_{
     display: flex;
-    flex-direction: column;
+    
+    justify-content: center;
 }
 .navegar{
     display: flex;
@@ -128,3 +138,30 @@
     height: 20px;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #ccc;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
