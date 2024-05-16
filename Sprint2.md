@@ -24,7 +24,7 @@
 <div align="center">
 <br>
   
-:movie_camera: Vídeo sobre a 2ª sprint <a href="https://www.youtube.com/">***aqui***</a>  
+:movie_camera: Vídeo sobre a 2ª sprint <a href="https://www.youtube.com/watch?v=gYo1Vt42_MY">***aqui***</a>  
 
 <br>
 </div>
@@ -141,9 +141,9 @@ Apresentação para o cliente (Sprint Review)
 ## :rice_scene: Exportação em .pdf
 
 <div align="center">
-      <img src="./docs/">
+      <img src="./docs/FuncinalidadePDFbotao.png">
       <br>
-      <img src="./docs/">
+      <img src="./docs/FuncinalidadePDF.png">
 </div>
 
 → [Voltar ao topo](#topo)
